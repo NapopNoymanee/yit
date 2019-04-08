@@ -74,8 +74,8 @@
 		ImageDestroy($images_orig);
 		ImageDestroy($images_fin);*/
 	
-	$queryPK = "INSERT INTO packagetour (pac_id, pac_code, agent_id, pac_picture, pac_tour_type, pac_location, pac_name_th, pac_day, pac_night, pac_app_time, pac_facility, pac_safety, pac_adult_wholesale_price, pac_child_wholesale_price, pac_adult_retail_price, pac_child_retail_price, pac_peo_min, pac_peo_limit, pac_location_app, pac_des_th, pac_keyword_th,pac_timestamp) 
-			VALUES ('$pac_id','$pac_code', '$ID_Agent','$directory', '$pac_tour_type', '$pac_location', '$pac_name_th', '$pac_day', '$pac_night', '$pac_app_time', '$pac_facility', '$pac_safety', '$pac_adult_wholesale_price', '$pac_child_wholesale_price', '$pac_adult_retail_price', '$pac_child_retail_price', '$pac_peo_min', '$pac_peo_limit', '$pac_location_app', '$pac_des_th', '$pac_keyword_th', now())";
+	$queryPK = "INSERT INTO packagetour (pac_id, pac_code, agent_id, pac_picture, pac_tour_type, pac_location, pac_name_th, pac_day, pac_night, pac_app_time, pac_facility, pac_safety, pac_adult_wholesale_price, pac_child_wholesale_price, pac_adult_retail_price, pac_child_retail_price, pac_peo_min, pac_peo_limit, pac_location_app, pac_des_th, pac_keyword_th, pac_status, pac_timestamp) 
+			VALUES ('$pac_id','$pac_code', '$ID_Agent','$directory', '$pac_tour_type', '$pac_location', '$pac_name_th', '$pac_day', '$pac_night', '$pac_app_time', '$pac_facility', '$pac_safety', '$pac_adult_wholesale_price', '$pac_child_wholesale_price', '$pac_adult_retail_price', '$pac_child_retail_price', '$pac_peo_min', '$pac_peo_limit', '$pac_location_app', '$pac_des_th', '$pac_keyword_th', 'รออนุมัติ', now())";
 	if (mysqli_query($conn, $queryPK)) {
 		echo "New record created successfully";
 		header('Location: add_package_detail.php?pac_code='.$pac_code);

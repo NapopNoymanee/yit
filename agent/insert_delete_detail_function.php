@@ -1,5 +1,5 @@
 <?php
-//echo print_r($_GET);
+//cho print_r($_GET);
 	$pac_code = $_GET['pac_code'];
 	$pac_id = base_convert($pac_code, 36, 10);
 	$add_det = $_GET['add_det'];
@@ -24,10 +24,14 @@
 		$det_time = $_POST['det_time_hour'].':'.$_POST['det_time_minute'];
 		$pac_detail_des_th = $_POST['detail'];
 		
+	if(isset($_POST['old_tour_pic'])) {
+		$directory = $_POST['old_tour_pic'];
+	}else {
 		$rename = explode(".", $_FILES["pic"]["name"]);	
 		$newname = $pac_id."-".date("Ymdhis").".".end($rename);	
 		$directory = "images/pac_profile/".$newname;
-		copy($_FILES["pic"]["tmp_name"],"../".$directory );
+		copy($_FILES["pic"]["tmp_name"],"../".$directory );	
+	}
 		
 		$query = "UPDATE pac_detail SET pac_detail_date = '$det_date', pac_detail_time = '$det_time', pac_detail_pic = '$directory', pac_detail_des_th = '$pac_detail_des_th' WHERE pac_id = '$pac_id' AND pac_detail_id = '$detid'";
 	}
@@ -39,5 +43,4 @@
 		echo "Error: " . $query . "<br>" . mysqli_error($conn);
 	}
 	//echo $query;
-	
 ?>

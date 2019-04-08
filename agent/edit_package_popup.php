@@ -14,8 +14,9 @@
 						  
 						  <p>
 							  <label>ภาพหน้าปก</label>
-							  <img src="../<?php echo $Recordassoc_packagetour['pac_picture']; ?>" style="width:100%" class="w3-padding">
-							  <input  class="w3-input w3-border w3-round-large" name="tour_pic" id="tour_pic" type="file" accept="image/png, image/jpeg" required>
+							  <img id="show_pic" src="../<?php echo $Recordassoc_packagetour['pac_picture']; ?>" style="width:100%" class="w3-padding">
+							  <input name="old_tour_pic" id="old_tour_pic" type="hidden" value="<?php echo $Recordassoc_packagetour['pac_picture']; ?>">
+							  <input class="w3-input w3-border w3-round-large" name="tour_pic" id="tour_pic" type="file" accept="image/png, image/jpeg">
 						  </p>
 						  
 			  <p>
@@ -162,3 +163,23 @@
 		</form>
 		</div>
 <!---------------end----modal----add--------------------->
+<script>
+	$(document).ready(function() {
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#show_pic').attr('src', e.target.result);
+				$('#old_tour_pic').attr('value', 'old');
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#tour_pic").on('change', function(){
+        readURL(this);
+    });
+    $(".upload-button").on('click', function() {
+       $("#tour_pic").click();
+    });
+});
+</script>

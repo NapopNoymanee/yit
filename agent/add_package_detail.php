@@ -82,7 +82,7 @@ function myFunction() {
 			<?php } ?>
 			
 			<div class="w3-bar w3-padding-16">
-				<button class="w3-button w3-green w3-round-xlarge w3-left" style="width:30%" type="button" onclick="window.location.href='add_package_price.php?pac_code=<?php echo $pac_code; ?>'" class="btn btn-success">ต่อไป>></button>
+				<button class="w3-button w3-green w3-round-xlarge w3-left" id="next" style="width:30%; display: block;" type="button" onclick="window.location.href='add_package_price.php?pac_code=<?php echo $pac_code; ?>'" class="btn btn-success">ต่อไป>></button>
 				<button class="w3-button w3-teal w3-round-xlarge w3-right" type="button" onclick="document.getElementById('add_detail_0').style.display='block'" style="width:30%" >+ เพิ่มกิจกรรม</button>
 			</div>
 			
@@ -95,6 +95,10 @@ function myFunction() {
 		<div class="w3-white w3-container w3-padding-32">&nbsp;</div>
 		
 	<?php include 'footer.php'; ?>
-
+	<script>
+		if (<?php echo mysqli_num_rows($Recordset_pac_detail); ?> == 0) {
+			document.getElementById("next").disabled = true;
+		}
+	</script>
  </body>
 </html>

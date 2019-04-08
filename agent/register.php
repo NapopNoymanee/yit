@@ -103,11 +103,11 @@ function myFunction() {
 						<label>ลงขายแพคเกจทัวร์ </label>
 					</p>
 					<p>
-						<input class="w3-radio" type="radio" name="tranlator" value="tranlator">
+						<input class="w3-radio" type="radio" name="translator" value="translator">
 						<label>แปลภาษาไทย &#8596; จีน</label>
 					</p>
 					<p>
-						<input class="w3-radio" type="radio" name="qr_agent" value="qr_agent">
+						<input class="w3-radio" type="radio" name="seller" value="seller">
 						<label>ตัวแทนจำหน่าย Sale Agent</label>
 					</p>
 				</p>
@@ -131,13 +131,13 @@ function myFunction() {
 					</p>
 					<p>
 						<label>ไฟล์เอกสาร หนังสือรับรองจดทะเบียนนิติบุคคล (ไฟล์ภาพ หรือเอกสาร PDF)</label>
-						<input class="w3-input w3-border w3-round-large" name="company_certificate" id="company_certificate" type="file" accept="application/pdf, image/png, image/jpeg" required>
+						<input class="w3-input w3-border w3-round-large" name="company_cer" id="company_cer" type="file" accept="application/pdf, image/png, image/jpeg" required>
 					</p>
 					<p>
 						<label style="display: block;">เลขทะเบียนนำเที่ยว</label><!----เก็บในรูปแบบ 00/000 เป็น Text ----->
-						<input class="w3-margin w3-input w3-border w3-round-large" style="width:30%;display: inline;" name="permission_id" placeholder="00" type="number" required>
+						<input class="w3-margin w3-input w3-border w3-round-large" style="width:30%;display: inline;" name="permission_id_2" placeholder="00" type="number" required>
 						<font size="5">/</font>
-						<input class="w3-margin w3-input w3-border w3-round-large" style="width:40%;display: inline;" name="permission_id" placeholder="00000" type="number" required>
+						<input class="w3-margin w3-input w3-border w3-round-large" style="width:40%;display: inline;" name="permission_id_4" placeholder="00000" type="number" required>
 					</p>
 					<p>
 						<label>ประเภทธุรกิจนำเที่ยว</label><!----แสดงอัตโนมัติ โดยที่ เลขจะเป็นแบบนี้ 00/00000 -สองตัวหน้า โดยที่ 11 = ใบอนุญาตนำเที่ยวต่างประเทศ, 12 = ใบอนุญาตนำเที่ยวในประเทศ,  13 = อนุญาตนำเที่ยวเฉพาะพื้นที่,      14 = ใบอนุญาตนำเที่ยวแบบอินบาวด์ ,    ---->
