@@ -1,0 +1,1 @@
+[26-Mar-2019 06:18:42 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'u201417513_main'@'2a02:4780:3:1::2d' (using password: YES) in /home/u201417513/domains/yit.yt/public_html/con_database/key.php on line 9
