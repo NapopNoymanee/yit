@@ -20,5 +20,6 @@
 	$recordsetDisplay = mysqli_query($conn,$queryDisplay);
 	echo count(mysqli_fetch_assoc($recordsetDisplay));*/
 	//date_default_timezone_set("Asia/Bangkok");
-	echo date('c');
+	echo date('c')."fuckkkkkkkkk";
+	
 ?>
